@@ -13,6 +13,9 @@ addons:
       - libpng-dev
       - zlib1g-dev
 
+r_github_packages:
+  - jimhester/covr
+
 env:
   global:
     - MAKEFLAGS="j -2"
@@ -186,6 +189,9 @@ matrix:
         - brew install jasper
         - brew install openjpeg
         - ./install_eccodes.sh
+
+after_success:
+  - Rscript -e 'library(covr); codecov()'
 
 warnings_are_errors: true
 

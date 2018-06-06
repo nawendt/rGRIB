@@ -193,6 +193,9 @@ matrix:
 after_success:
   - Rscript -e 'library(covr); codecov()'
 
+after_success:
+  - Rscript -e 'library(covr); codecov()'
+
 warnings_are_errors: true
 
 notifications:

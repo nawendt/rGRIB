@@ -1,6 +1,5 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
-^configure\.ac$
 ^README\.md$
 ^\.DS_Store$
 ^\.Rhistory$

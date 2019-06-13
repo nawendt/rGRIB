@@ -1,4 +1,4 @@
-AC_INIT([gribr], 1.2.0, [nathan.wendt@noaa.gov])
+AC_INIT([gribr], 1.2.2, [nathan.wendt@noaa.gov])
 
 m4_include([m4/gribr_link_eccodes.m4])
 

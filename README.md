@@ -1,9 +1,9 @@
 # gribr
 GRIB interface for R using the [ECMWF ecCodes package](https://software.ecmwf.int/wiki/display/ECC).
 
-[![Travis-CI Build Status](https://travis-ci.org/nawendt/gribr.svg?branch=master)](https://travis-ci.org/nawendt/gribr)  
-[![codecov](https://codecov.io/gh/nawendt/gribr/branch/master/graph/badge.svg)](https://codecov.io/gh/nawendt/gribr)
+[![Travis-CI Build Status](https://travis-ci.org/nawendt/gribr.svg?branch=master)](https://travis-ci.org/nawendt/gribr)
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/nawendt/gribr?branch=master&svg=true)](https://ci.appveyor.com/project/nawendt/gribr)
+[![Codecov test coverage](https://codecov.io/gh/nawendt/gribr/branch/master/graph/badge.svg)](https://codecov.io/gh/nawendt/gribr?branch=master)
 [![License](https://img.shields.io/badge/License-BSD%202--Clause-blue.svg)](https://opensource.org/licenses/BSD-2-Clause)  
 
 ### Purpose

@@ -13,4 +13,4 @@ RoxygenNote: 6.0.1
 NeedsCompilation: yes
 SystemRequirements: ECMWF ecCodes (>= 2.0.0)
 Imports: proj4, methods, utils
-Suggests: testthat, lintr
+Suggests: testthat, lintr, covr

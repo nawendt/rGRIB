@@ -10,3 +10,4 @@
 ^m4$
 ^install_.*\.sh$
 ^appveyor\.yml$
+^codecov\.yml$

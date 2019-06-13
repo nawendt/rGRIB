@@ -3,7 +3,7 @@
 cd $HOME
 echo Staging dependency files to $(pwd)
 curl -o eccodes-${ECCODES_VERSION}-Source.tar.gz \
-        https://software.ecmwf.int/wiki/download/attachments/45757960/eccodes-${ECCODES_VERSION}-Source.tar.gz?api=v2
+		https://confluence.ecmwf.int/download/attachments/45757960/eccodes-${ECCODES_VERSION}-Source.tar.gz
 tar -xzf eccodes-${ECCODES_VERSION}-Source.tar.gz
 cd eccodes-${ECCODES_VERSION}-Source
 mkdir build && cd build

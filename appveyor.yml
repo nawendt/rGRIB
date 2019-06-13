@@ -8,7 +8,7 @@ environment:
       MINICONDA_CHANNEL: conda-forge
 
 init:
-  - "ECHO %PYTHON_VERSION% %MINICONDA%"
+  - "ECHO %MINICONDA%"
 
 install:
   - "set PATH=%MINICONDA%;%MINICONDA%\\Scripts;%PATH%"
@@ -18,9 +18,10 @@ install:
   - "conda create -n win_gribr -c %MINICONDA_CHANNEL% r-base rtools eccodes"
   - activate win_gribr
   - "echo %PATH%"
+  - dir
 
 build_script:
-  - R CMD INSTALL gribr --no-multiarch --clean
+  - R CMD INSTALL --no-multiarch --clean .
 
 test_script:
   - R CMD CHECK --as-cran

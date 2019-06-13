@@ -4,7 +4,8 @@
 \alias{grib_list}
 \title{List contents of GRIB file}
 \usage{
-grib_list(gribObj, filter = "none", namespace = "ls", output = "table")
+grib_list(gribObj, filter = "none", namespace = "ls",
+  output = "table")
 }
 \arguments{
 \item{gribObj}{GRIB class object.}

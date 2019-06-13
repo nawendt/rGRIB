@@ -9,7 +9,7 @@ BugReports: https://github.com/nawendt/gribr/issues
 Description: R interface for GRIB files using ECMWF ecCodes. Easily read GRIB data into native R data types.
 License: BSD_2_clause + file LICENSE
 LazyData: TRUE
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
 NeedsCompilation: yes
 SystemRequirements: ECMWF ecCodes (>= 2.0.0)
 Imports: proj4, methods, utils

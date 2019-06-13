@@ -42,12 +42,15 @@ matrix:
       os: osx
       r_check_args: --as-cran
       before_install:
+        - brew search eccodes
         - brew update
-        - brew outdated libpng || brew upgrade libpng
-        - brew outdated lzlib || brew upgrade lzlib
-        - brew outdated jpeg || brew upgrade jpeg
-        - brew install openjpeg
-        - ./install_eccodes.sh
+        # - brew outdated libpng || brew upgrade libpng
+        # - brew outdated lzlib || brew upgrade lzlib
+        # - brew outdated jpeg || brew upgrade jpeg
+        # - brew install jasper
+        # - brew install openjpeg
+        - brew install eccodes
+        # - ./install_eccodes.sh
     - env:
       - ECCODES_VERSION=2.12.5
       - OPENJPEG_INCLUDE_DIR=/usr/local/include/openjpeg-2.3
@@ -56,13 +59,15 @@ matrix:
       os: osx
       r_check_args: --as-cran
       before_install:
+        - brew search eccodes
         - brew update
-        - brew outdated libpng || brew upgrade libpng
-        - brew outdated lzlib || brew upgrade lzlib
-        - brew outdated jpeg || brew upgrade jpeg
-        - brew install jasper
-        - brew install openjpeg
-        - ./install_eccodes.sh
+        # - brew outdated libpng || brew upgrade libpng
+        # - brew outdated lzlib || brew upgrade lzlib
+        # - brew outdated jpeg || brew upgrade jpeg
+        # - brew install jasper
+        # - brew install openjpeg
+        - brew install eccodes
+        # - ./install_eccodes.sh
 
 after_success:
   - Rscript -e 'library(covr); codecov()'

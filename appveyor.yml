@@ -1,0 +1,26 @@
+build: false
+
+platform: x64
+
+environment:
+  matrix:
+    - MINICONDA: C:\Miniconda3-x64
+      MINICONDA_CHANNEL: conda-forge
+
+init:
+  - "ECHO %PYTHON_VERSION% %MINICONDA%"
+
+install:
+  - "set PATH=%MINICONDA%;%MINICONDA%\\Scripts;%PATH%"
+  - conda config --set always_yes yes --set changeps1 no
+  - conda update -q conda
+  - conda info -a
+  - "conda create -n win_gribr -c %MINICONDA_CHANNEL% r-base rtools eccodes"
+  - conda activate win_gribr
+  - "echo %PATH%"
+
+build_script:
+  - R CMD INSTALL gribr --no-multiarch --clean
+
+test_script:
+  - R CMD CHECK --as-cran

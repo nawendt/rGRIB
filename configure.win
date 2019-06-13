@@ -1,17 +1,13 @@
 #!/bin/sh
 
-# This is the Windows configure script for gribr. This is included
-# for those that would like to build the GRIB API on Windows using
-# MinGW. It is ** HIGHLY ** recommended that you use the provided
-# Windows binaries as this will simplify your efforts considerably.
-
-# PKG_CFLAGS should at least contain the INCLUDE directory of your
-# GRIB API build. Other pertinent compiler flags will also go here.
-
-# PKG_LIBS will contain the LIB directory of your GRIB API build.
-
 PKG_CPPFLAGS=
 PKG_LIBS=
 
-echo "PKG_CPPFLAGS=$PKG_CPPFLAGS" > src/Makevars.win
-echo "PKG_LIBS=$PKG_LIBS" >> src/Makevars.win
+if test "X$PKG_CPPFLAGS" = "X" || test "X$PKG_LIBS" = "X"; then
+  echo "PKG_CPPFLAGS=" > src/Makevars.win
+  echo "PKG_LIBS=-leccodes" >> src/Makevars.win
+
+else
+  echo "PKG_CPPFLAGS=$PKG_CPPFLAGS" > src/Makevars.win
+  echo "PKG_LIBS=$PKG_LIBS" >> src/Makevars.win
+fi

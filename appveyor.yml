@@ -16,7 +16,7 @@ install:
   - conda update -q conda
   - conda info -a
   - "conda create -n win_gribr -c %MINICONDA_CHANNEL% r-base rtools eccodes"
-  - conda activate win_gribr
+  - activate win_gribr
   - "echo %PATH%"
 
 build_script:

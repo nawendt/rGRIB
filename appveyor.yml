@@ -3,22 +3,25 @@ build: false
 platform: x64
 
 environment:
-  MINICONDA: C:\Miniconda3-x64
-  MINICONDA_CHANNEL: conda-forge
+  matrix:
+    - MINICONDA: C:\Miniconda3-x64
+      MINICONDA_CHANNEL: conda-forge
+      CONDA_LIB: "%MINICONDA%\\Library\\lib"
+      CONDA_INC: "%MINICONDA%\\Library\\include"
 
 init:
   - "ECHO %MINICONDA%"
-  - "ECHO %LIBRARY_INC%"
-  - "ECHO %LIBRARY_LIB%"
+  - "ECHO %CONDA_INC%"
+  - "ECHO %CONDA_LIB%"
 
 install:
-  - "set PATH=%MINICONDA%;%MINICONDA%\\Scripts;%PATH%"
+  - "set PATH=%MINICONDA%;%MINICONDA%\\Scripts;%CONDA_LIB%;%PATH%"
   - conda config --set always_yes yes --set changeps1 no
   - conda update -q conda
-  - "conda install -c %MINICONDA_CHANNEL% r-base eccodes r-proj4"
+  - "conda install -c %MINICONDA_CHANNEL% rtools r-base eccodes r-proj4"
 
 build_script:
-  - R CMD INSTALL --no-multiarch --clean .
+  - R CMD INSTALL --no-multiarch --clean --configure-vars="PKG_LIBS=-L%CONDA_LIB PKG_CPPFLAGS=-I%CONDA_INC%" .
 
 test_script:
   - R CMD CHECK --as-cran

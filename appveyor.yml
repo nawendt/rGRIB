@@ -9,16 +9,14 @@ environment:
 
 init:
   - "ECHO %MINICONDA%"
+  - "ECHO %LIBRARY_INC%"
+  - "ECHO %LIBRARY_LIB%"
 
 install:
   - "set PATH=%MINICONDA%;%MINICONDA%\\Scripts;%PATH%"
   - conda config --set always_yes yes --set changeps1 no
   - conda update -q conda
-  - conda info -a
-  - "conda create -n win_gribr -c %MINICONDA_CHANNEL% r-base rtools eccodes r-proj4"
-  - activate win_gribr
-  - "echo %PATH%"
-  - dir
+  - "conda install -c %MINICONDA_CHANNEL% r-base eccodes r-proj4"
 
 build_script:
   - R CMD INSTALL --no-multiarch --clean .

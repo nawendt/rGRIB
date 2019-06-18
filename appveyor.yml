@@ -15,7 +15,7 @@ install:
   - conda config --set always_yes yes --set changeps1 no
   - conda update -q conda
   - conda info -a
-  - "conda create -n win_gribr -c %MINICONDA_CHANNEL% r-base rtools eccodes"
+  - "conda create -n win_gribr -c %MINICONDA_CHANNEL% r-base rtools eccodes r-proj4"
   - activate win_gribr
   - "echo %PATH%"
   - dir

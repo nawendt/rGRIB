@@ -8,6 +8,7 @@ environment:
       MINICONDA_CHANNEL: conda-forge
       CONDA_LIB: "%MINICONDA%\\Library\\lib"
       CONDA_INC: "%MINICONDA%\\Library\\include"
+      CONDA_BIN: "%MINICONDA%\\Library\\bin"
 
 init:
   - "ECHO %MINICONDA%"
@@ -15,7 +16,7 @@ init:
   - "ECHO %CONDA_LIB%"
 
 install:
-  - "set PATH=%MINICONDA%;%MINICONDA%\\Scripts;%CONDA_LIB%;%PATH%"
+  - "set PATH=%CONDA_BIN%;%MINICONDA%\\Scripts;%PATH%"
   - conda config --set always_yes yes --set changeps1 no
   - conda update -q conda
   - "conda install -c %MINICONDA_CHANNEL% r-base eccodes r-proj4 rtools"

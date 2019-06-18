@@ -18,7 +18,7 @@ install:
   - "set PATH=%MINICONDA%;%MINICONDA%\\Scripts;%CONDA_LIB%;%PATH%"
   - conda config --set always_yes yes --set changeps1 no
   - conda update -q conda
-  - "conda install -c %MINICONDA_CHANNEL% rtools r-base eccodes r-proj4"
+  - "conda install -c %MINICONDA_CHANNEL% r-base eccodes r-proj4 rtools"
 
 build_script:
   - R CMD INSTALL --no-multiarch --clean --configure-vars="PKG_LIBS=-L%CONDA_LIB PKG_CPPFLAGS=-I%CONDA_INC%" .

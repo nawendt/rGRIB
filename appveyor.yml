@@ -3,9 +3,8 @@ build: false
 platform: x64
 
 environment:
-  matrix:
-    - MINICONDA: C:\Miniconda3-x64
-      MINICONDA_CHANNEL: conda-forge
+  MINICONDA: C:\Miniconda3-x64
+  MINICONDA_CHANNEL: conda-forge
 
 init:
   - "ECHO %MINICONDA%"

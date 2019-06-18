@@ -19,7 +19,7 @@ install:
   - "set PATH=%MINICONDA%\\Scripts;%PATH%"
   - conda config --set always_yes yes --set changeps1 no
   - conda update -q conda
-  - "conda install create -n win_gribr -c %MINICONDA_CHANNEL% r-base eccodes r-proj4 rtools"
+  - "conda create -n win_gribr -c %MINICONDA_CHANNEL% r-base eccodes r-proj4 rtools"
   - activate win_gribr
 
 build_script:

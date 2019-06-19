@@ -5,6 +5,7 @@
 ^\.Rhistory$
 ^\.git_commit_template$
 ^\.gitignore$
+^\.git$
 ^\.travis\.yml$
 ^m4$
 ^install_.*\.sh$

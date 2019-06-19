@@ -14,11 +14,11 @@ install:
   - "set PATH=%MINICONDA%\\Scripts;%PATH%"
   - conda config --set always_yes yes --set changeps1 no
   - conda update -q conda
-  - "conda create -n win_gribr -c %MINICONDA_CHANNEL% r-base eccodes r-proj4 rtools r-covr r-lintr r-testthat"
+  - "conda create -n win_gribr -c %MINICONDA_CHANNEL% r-base eccodes r-proj4 rtools r-covr r-lintr r-testthat pandoc"
   - activate win_gribr
 
 build_script:
-  - R CMD INSTALL --build --clean --no-multiarch .
+  - R CMD build --clean --no-multiarch .
 
 test_script:
   - R CMD check --as-cran .

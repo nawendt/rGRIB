@@ -2,8 +2,8 @@
 
 PKG_CPPFLAGS="C:/Miniconda3-x64/envs/win_gribr/Library/include"
 PKG_LIBS="C:/Miniconda3-x64/envs/win_gribr/Library/bin"
-ECCODES_DEFINITION_PATH="C:/Miniconda3-x64/envs/win_gribrLibrary/share/eccodes/definitions"
+# ECCODES_DEFINITION_PATH="C:/Miniconda3-x64/envs/win_gribrLibrary/share/eccodes/definitions"
 
-echo "PKG_CPPFLAGS=-I$PKG_CPPFLAGS" > src/Makevars
-echo "PKG_LIBS=-L$PKG_LIBS -leccodes" >> src/Makevars
-echo "ECCODES_DEFINITION_PATH=-$ECCODES_DEFINITION_PATH" >> src/Makevars
+echo "PKG_CPPFLAGS=-I$PKG_CPPFLAGS" > src/Makevars.win
+echo "PKG_LIBS=-L$PKG_LIBS -leccodes" >> src/Makevars.win
+# echo "ECCODES_DEFINITION_PATH=-$ECCODES_DEFINITION_PATH" >> src/Makevars.win

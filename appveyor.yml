@@ -18,7 +18,7 @@ install:
   - activate win_gribr
 
 build_script:
-  - R CMD INSTALL --clean --no-multiarch .
+  - R CMD INSTALL --build --clean --no-multiarch .
 
 test_script:
-  - R CMD check --as-cran
+  - R CMD check --as-cran .

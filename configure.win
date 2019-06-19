@@ -1,7 +1,7 @@
 #!/bin/sh
 
-PKG_CPPFLAGS=C:/Miniconda3-x64/envs/win_gribr/Library/include
-PKG_LIBS=C:/Miniconda3-x64/envs/win_gribr/Library/lib
+PKG_CPPFLAGS="C:/Miniconda3-x64/envs/win_gribr/Library/include"
+PKG_LIBS="C:/Miniconda3-x64/envs/win_gribr/Library/bin"
 
-echo "PKG_CPPFLAGS=$PKG_CPPFLAGS" > src/Makevars
-echo "PKG_LIBS=$PKG_LIBS" >> src/Makevars
+echo "PKG_CPPFLAGS=-I$PKG_CPPFLAGS" > src/Makevars
+echo "PKG_LIBS=-L$PKG_LIBS -leccodes" >> src/Makevars

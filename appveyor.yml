@@ -21,9 +21,11 @@ install:
   - conda update -q conda
   - "conda create -n win_gribr -c %MINICONDA_CHANNEL% r-base eccodes r-proj4 rtools"
   - activate win_gribr
+  - ECHO "I AM HERE"
 
 build_script:
-  - R CMD INSTALL --no-multiarch --clean --configure-vars="PKG_LIBS=-L%CONDA_BIN -leccodes PKG_CPPFLAGS=-I%CONDA_INC%" .
+  - ECHO "I AM HERE"
+  - R CMD INSTALL --no-multiarch --clean --configure-vars="PKG_LIBS=-L%CONDA_BIN% -leccodes PKG_CPPFLAGS=-I%CONDA_INC%" .
 
 test_script:
   - R CMD CHECK --as-cran

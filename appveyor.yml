@@ -21,4 +21,4 @@ build_script:
   - R CMD INSTALL --clean --no-multiarch .
 
 test_script:
-  - R CMD CHECK --as-cran
+  - R CMD check --as-cran

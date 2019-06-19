@@ -6,14 +6,9 @@ environment:
   matrix:
     - MINICONDA: C:\Miniconda3-x64
       MINICONDA_CHANNEL: conda-forge
-      CONDA_LIB: "%MINICONDA%\\Library\\lib"
-      CONDA_INC: "%MINICONDA%\\Library\\include"
-      CONDA_BIN: "%MINICONDA%\\Library\\bin"
 
 init:
   - "ECHO %MINICONDA%"
-  - "ECHO %CONDA_INC%"
-  - "ECHO %CONDA_LIB%"
 
 install:
   - "set PATH=%MINICONDA%\\Scripts;%PATH%"
@@ -21,11 +16,9 @@ install:
   - conda update -q conda
   - "conda create -n win_gribr -c %MINICONDA_CHANNEL% r-base eccodes r-proj4 rtools"
   - activate win_gribr
-  - ECHO "I AM HERE"
 
 build_script:
-  - ECHO "I AM HERE"
-  - R CMD INSTALL --no-multiarch --clean --configure-vars="PKG_LIBS=-L%CONDA_BIN% -leccodes PKG_CPPFLAGS=-I%CONDA_INC%" .
+  - R CMD INSTALL --clean --no-multiarch .
 
 test_script:
   - R CMD CHECK --as-cran

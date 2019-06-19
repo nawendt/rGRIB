@@ -1,13 +1,7 @@
 #!/bin/sh
 
-PKG_CPPFLAGS=
-PKG_LIBS=
+PKG_CPPFLAGS=C:/Miniconda3-x64/envs/win_gribr/Library/include
+PKG_LIBS=C:/Miniconda3-x64/envs/win_gribr/Library/lib
 
-if test "X$PKG_CPPFLAGS" = "X" || test "X$PKG_LIBS" = "X"; then
-  echo "PKG_CPPFLAGS=" > src/Makevars.win
-  echo "PKG_LIBS=-leccodes" >> src/Makevars.win
-
-else
-  echo "PKG_CPPFLAGS=$PKG_CPPFLAGS" > src/Makevars.win
-  echo "PKG_LIBS=$PKG_LIBS" >> src/Makevars.win
-fi
+echo "PKG_CPPFLAGS=$PKG_CPPFLAGS" > src/Makevars
+echo "PKG_LIBS=$PKG_LIBS" >> src/Makevars

@@ -21,4 +21,4 @@ build_script:
   - R CMD build --clean --no-multiarch .
 
 test_script:
-  - R CMD check --as-cran .
+  - R CMD check --as-cran gribr_1.3.0.tar.gz
